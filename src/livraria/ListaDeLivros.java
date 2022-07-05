@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
  */
 public class ListaDeLivros extends JFrame {
 
+    private Object strings;
+
     public ListaDeLivros() {
         initComponents();
     }
@@ -75,21 +77,20 @@ public class ListaDeLivros extends JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
- String selecionaLivro = null ;
+
     private void btn_jaLIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_jaLIActionPerformed
 
         if(listaLivros.getSelectedIndex()== -1){
                  JFrame jFrame = new JFrame();
                  JOptionPane.showMessageDialog(jFrame, "nenhum Livro foi selecionado, Seleciona algum Livros!!");
         }else{ 
-                String novoString = ""+mostrarLivro(); 
+                String novoString = mostrarLivro();
                 txtCampo.setText(novoString);
-                CaracteriscaDoLivros menuLivro = new CaracteriscaDoLivros();
-                menuLivro.setVisible(true);
         }
        
     }//GEN-LAST:event_btn_jaLIActionPerformed
  public String mostrarLivro(){
+               String selecionaLivro;
                return selecionaLivro = ""+ listaLivros.getSelectedValue();
                 
  }
